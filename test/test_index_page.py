@@ -1,6 +1,5 @@
 from pages.index_page import IndexPage
 
-    
 def test_index_page(browser):
     link = "http://localhost/index.php"
     page = IndexPage(browser, link)
