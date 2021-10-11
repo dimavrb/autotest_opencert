@@ -21,3 +21,13 @@ class register(object):
 
 class search(object):
     RESULT = (By.XPATH, './/a[text() = "HP LP3065"]')
+class reg_page(object):
+    FIRSTNAME = (By.XPATH, "//input[@id='input-firstname']")
+    LASTNAME = (By.XPATH, "//input[@id='input-lastname']")
+    EMAIL = (By.XPATH,"//input[@id='input-email']")
+    TELEPHONE = (By.XPATH, "//input[@id='input-telephone']")
+    PASSWORD = (By.XPATH, "//input[@id='input-password']")
+    PASSWORDCONFIRM = (By.XPATH, "//input[@id='input-confirm']")
+    PRIVATEPOLICE = (By.XPATH, "//body/div[@id='account-register']/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]")
+    CONTINUE = (By.XPATH, "//body/div[@id='account-register']/div[1]/div[1]/form[1]/div[1]/div[1]/input[2]")
+    SUCCESSPAGEREG = (By.XPATH, "// a[contains(text(), 'Success')]")

@@ -1,4 +1,8 @@
 from selenium.common.exceptions import NoSuchElementException
+import faker
+fake = faker.Faker(locale="ru_RU")
+
+
 class BasePage(object):
     def __init__(self, browser, url):
         self.browser = browser
@@ -26,3 +30,12 @@ class BasePage(object):
     
     def send_keys(self, how, what):
         element = self.browser.find_element(how, what).send_keys('HP')
+    def send_keys_reg_date(self, how, what):
+        element = self.browser.find_element(how, what).send_keys(fake.last_name())
+    def send_keys_email(self, how, what):
+        element = self.browser.find_element(how, what).send_keys(fake.email())
+
+    def send_keys_password(self, how, what):
+        element = self.browser.find_element(how, what).send_keys('password')
+    def send_keys_telephone(self, how, what):
+        element = self.browser.find_element(how, what).send_keys('89231452256')
