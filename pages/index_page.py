@@ -1,5 +1,7 @@
+from selenium.webdriver.support.select import Select
+
 from .base_page import BasePage
-from .locators import index
+from .locators import index, order_page
 from .locators import search
 from .locators import register
 from .locators import reg_page
@@ -8,7 +10,9 @@ import time
 class IndexPage(BasePage): 
     def view_index_page(self):
         assert self.is_element_present(*index.HEADER), "The page was not loaded"
-        
+
+    def go_to_index_page(self):
+        self.click_element(*reg_page.INDEXPAGE)
     def search_in_index_page(self):
         self.send_keys(*index.SEARCH)
         self.click_element(*index.SEARCHBUTTON)
@@ -21,14 +25,14 @@ class IndexPage(BasePage):
 
     def add_to_wish_list(self):
         self.click_element(*index.ADDTOWISH)
-        time.sleep(3)
+        time.sleep(1)
         assert self.is_element_present(*index.WISHLIST)
     def go_to_registration_page(self):
-        time.sleep(3)
+        time.sleep(1)
         self.click_element(*index.MYPROFILE)
-        time.sleep(3)
+        time.sleep(1)
         self.click_element(*index.REGISTERBUTTON)
-        time.sleep(3)
+        time.sleep(1)
         assert self.is_element_present(*register.HEADER), "Registration page is not found"
 
     def entrering_reg_data(self):
@@ -40,5 +44,28 @@ class IndexPage(BasePage):
         self.send_keys_password(*reg_page.PASSWORDCONFIRM)
         self.click_element(*reg_page.PRIVATEPOLICE)
         self.click_element(*reg_page.CONTINUE)
-        time.sleep(3)
+        time.sleep(1)
         assert self.is_element_present(*reg_page.SUCCESSPAGEREG), "Registration failed"
+
+
+    def make_order(self):
+        self.click_element(*index.CARTBUTTON)
+        self.click_element(*index.CHECKOUT)
+        #self.click_element(*order_page.NEWADDRESS)
+        self.send_keys_reg_date(*order_page.FIRSTNAME)
+        self.send_keys(*order_page.LASTNAME)
+        self.send_keys_reg_date(*order_page.ADDRESS1)
+        self.send_keys_reg_date(*order_page.CITY)
+        self.send_keys_reg_date(*order_page.POSTCODE)
+        self.send_keys_reg_date(*order_page.COUTNRY)
+        self.click_element(*order_page.REGION)
+        self.send_keys_region(*order_page.REGION)
+        self.click_element(*order_page.REGION)
+        self.click_element(*order_page.CONTINUESTEP2)
+        self.click_element(*order_page.CONTINUESTEP3)
+        self.send_keys(*order_page.COMMENTABOUTORDER)
+        self.click_element(*order_page.CONTINUESTEP4)
+        self.send_keys(*order_page.COMMETNABOUTPAYMENT)
+        self.click_element(*order_page.CONTINUESTEP5)
+        self.click_element(*order_page.TERMS)
+        self.click_element(*order_page.CONFIRMORDER)

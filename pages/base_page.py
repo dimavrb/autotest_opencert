@@ -39,3 +39,5 @@ class BasePage(object):
         element = self.browser.find_element(how, what).send_keys('password')
     def send_keys_telephone(self, how, what):
         element = self.browser.find_element(how, what).send_keys('89231452256')
+    def send_keys_region(self, how, what):
+        element = self.browser.find_element(how, what).send_keys('A')
