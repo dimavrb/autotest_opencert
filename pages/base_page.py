@@ -32,6 +32,8 @@ class BasePage(object):
         element = self.browser.find_element(how, what).send_keys('HP')
     def send_keys_reg_date(self, how, what):
         element = self.browser.find_element(how, what).send_keys(fake.last_name())
+    def send_keys_postcode(self, how, what):
+        element = self.browser.find_element(how, what).send_keys(fake.telephone(5))
     def send_keys_email(self, how, what):
         element = self.browser.find_element(how, what).send_keys(fake.email())
 

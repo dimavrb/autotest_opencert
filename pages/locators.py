@@ -7,7 +7,7 @@ class index(object):
     SEARCH= (By.CSS_SELECTOR, '#search > input')
     CART= (By.CSS_SELECTOR, '#cart')
     TOTALCART = (By.XPATH, "//*[contains(text(),' 1 item(s)')]")
-    ADDTOCART = (By.XPATH, "//div[@class='button-group'][1]")
+    ADDTOCART = (By.XPATH, "//body/div[@id='common-home']/div[1]/div[1]/div[2]/div[2]/div[1]/div[3]/button[1]/span[1]")
     NAVBAR = (By.CSS_SELECTOR, '#category')
     SLIDESHOW= (By.CSS_SELECTOR, '#slideshow0')
     SLIDER = (By.CSS_SELECTOR, '#carousel0')
@@ -53,3 +53,4 @@ class order_page(object):
     CONTINUESTEP5 = (By.XPATH, "//input[@id='button-payment-method']")
     TERMS = (By.XPATH, "//body/div[@id='checkout-checkout']/div[1]/div[1]/div[1]/div[5]/div[2]/div[1]/div[2]/div[1]/input[1]")
     CONFIRMORDER = (By.XPATH, "//input[@id='button-confirm']")
+    SUCCESSPAGEORDR = (By.XPATH, "//h1[contains(text(),'Your order has been placed!')]")
