@@ -30,16 +30,21 @@ class BasePage(object):
     
     def send_keys(self, how, what):
         element = self.browser.find_element(how, what).send_keys('HP')
-    def send_keys_reg_date(self, how, what):
+    def send_keys_first_name(self, how, what):
+        element = self.browser.find_element(how, what).send_keys(fake.first_name())
+    def send_keys_last_name(self, how, what):
         element = self.browser.find_element(how, what).send_keys(fake.last_name())
-    def send_keys_postcode(self, how, what):
-        element = self.browser.find_element(how, what).send_keys(fake.telephone(5))
     def send_keys_email(self, how, what):
         element = self.browser.find_element(how, what).send_keys(fake.email())
-
-    def send_keys_password(self, how, what):
-        element = self.browser.find_element(how, what).send_keys('password')
     def send_keys_telephone(self, how, what):
-        element = self.browser.find_element(how, what).send_keys('89231452256')
-    def send_keys_region(self, how, what):
+        element = self.browser.find_element(how, what).send_keys(fake.phone_number())
+    def send_keys_Password(self, how, what):
+        element = self.browser.find_element(how, what).send_keys('123456')
+    def send_keys_Address1(self, how, what):
+        element = self.browser.find_element(how, what).send_keys(fake.address())
+    def send_keys_City(self, how, what):
+        element = self.browser.find_element(how, what).send_keys(fake.city())
+    def send_keys_Postcode(self, how, what):
+        element = self.browser.find_element(how, what).send_keys('190031')
+    def send_keys_Region(self, how, what):
         element = self.browser.find_element(how, what).send_keys('A')

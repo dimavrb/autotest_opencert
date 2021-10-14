@@ -36,15 +36,16 @@ class IndexPage(BasePage):
         assert self.is_element_present(*register.HEADER), "Registration page is not found"
 
     def entrering_reg_data(self):
-        self.send_keys_reg_date(*reg_page.FIRSTNAME)
-        self.send_keys_reg_date(*reg_page.LASTNAME)
+        self.send_keys_first_name(*reg_page.FIRSTNAME)
+        self.send_keys_last_name(*reg_page.LASTNAME)
         self.send_keys_email(*reg_page.EMAIL)
         self.send_keys_telephone(*reg_page.TELEPHONE)
-        self.send_keys_password(*reg_page.PASSWORD)
-        self.send_keys_password(*reg_page.PASSWORDCONFIRM)
+        self.send_keys_Password(*reg_page.PASSWORD)
+        self.send_keys_Password(*reg_page.PASSWORDCONFIRM)
         self.click_element(*reg_page.PRIVATEPOLICE)
+        time.sleep(3)
         self.click_element(*reg_page.CONTINUE)
-        time.sleep(1)
+
         assert self.is_element_present(*reg_page.SUCCESSPAGEREG), "Registration failed"
 
 
@@ -52,14 +53,13 @@ class IndexPage(BasePage):
         self.click_element(*index.CARTBUTTON)
         self.click_element(*index.CHECKOUT)
         #self.click_element(*order_page.NEWADDRESS)
-        self.send_keys_reg_date(*order_page.FIRSTNAME)
-        self.send_keys(*order_page.LASTNAME)
-        self.send_keys_reg_date(*order_page.ADDRESS1)
-        self.send_keys_reg_date(*order_page.CITY)
-        self.send_keys_reg_date(*order_page.POSTCODE)
-        self.send_keys_reg_date(*order_page.COUTNRY)
+        self.send_keys_first_name(*order_page.FIRSTNAME)
+        self.send_keys_last_name(*order_page.LASTNAME)
+        self.send_keys_Address1(*order_page.ADDRESS1)
+        self.send_keys_City(*order_page.CITY)
+        self.send_keys_Postcode(*order_page.POSTCODE)
         self.click_element(*order_page.REGION)
-        self.send_keys_region(*order_page.REGION)
+        self.send_keys_Region(*order_page.REGION)
         self.click_element(*order_page.REGION)
         self.click_element(*order_page.CONTINUESTEP2)
         time.sleep(1)
