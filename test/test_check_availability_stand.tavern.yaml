@@ -1,8 +1,0 @@
-test_name: Check availability stand
-stages:
-  - name: Check return code 200 for main page store
-    request:
-      url: http://localhost
-      method: GET
-    response:
-      status_code: 200
