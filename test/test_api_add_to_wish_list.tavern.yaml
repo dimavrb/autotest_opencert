@@ -1,0 +1,14 @@
+test_name: Check add item to wish list
+stages:
+  - name: Check return code 200, if item add to wish list
+    request:
+      url: http://localhost/index.php?route=account/wishlist/add
+      method: POST
+      headers:
+        content-type: application/json
+      json:
+        product_id: 40
+    response:
+      status_code: 200
+      headers:
+        content-type: application/json
