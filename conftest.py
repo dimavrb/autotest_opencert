@@ -12,11 +12,11 @@ def browser(request):
     browser_name = request.config.getoption("browser_name")
     if browser_name == "chrome":
         print("\nstart chrome browser for test..")
-        browser = webdriver.Chrome()
+        browser = webdriver.Chrome('./chromedriver')
         browser.maximize_window()
     elif browser_name == "firefox":
         print("\nstart firefox browser for test..")
-        browser = webdriver.Firefox()
+        browser = webdriver.Firefox('./geckodriver')
         browser.maximize_window()
     else:
         print("Browser {} still is not implemented".format(browser_name))
