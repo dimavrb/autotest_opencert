@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-
+#Написать нормальные локаторы с XPATH
 class index(object):
     HEADER = (By.CSS_SELECTOR, '#top')
     LOGO= (By.CSS_SELECTOR, '#lgo')
